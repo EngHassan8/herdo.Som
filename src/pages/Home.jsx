@@ -33,25 +33,27 @@ export default function Home() {
   ];
   
 const initialFounders = [
-  {
+   {
     id: 1,
-    name: "Omar Ali Isacck",
-    role: "General secretory",
-    image: eng
+    name: "Mohamud Abdi Sheikh Adan",
+    role: "  EXECUTIVE DIRECTOR ",
+    image: mohamed,
   },
-
-  {
+{
     id: 2,
     name: "Mohamed Hassan",
-    role: "Deputy director",
+    role: "DEPUTY DIRECTOR",
     image: moha,
   },
   {
     id: 3,
-    name: "Mohamud Abdi Sheikh Adan",
-    role: "Ex Director",
-    image: mohamed,
+    name: "Omar Ali Isacck",
+    role: "GENERAL DIRECTOR",
+    image: eng
   },
+
+  
+ 
   
   
 
@@ -87,7 +89,7 @@ const initialFounders = [
           <section className="flex flex-col md:flex-row items-center justify-between px-6 sm:px-20 py-16 gap-10 rounded-lg shadow-lg ">
           <div className="md:w-1/2">
             <h1 className="text-5xl font-extrabold mb-6 leading-tight">
-              Hileec Environment &amp; Relief Development Organization
+              Hilaac Environment &amp; Relief Development Organization
             </h1>
             <p className="text-lg mb-8 max-w-md">
               Empowering communities and safeguarding nature across Somalia.
