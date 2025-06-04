@@ -111,11 +111,9 @@ const initialFounders = [
 
         {/* About Section */}
         <section className="bg-white py-16 px-6 sm:px-20 text-center max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8 text-green-700">About Our NGO Network</h2>
+          <h2 className="text-4xl font-bold mb-8 text-green-700">About Our NGO </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
-            We are a coalition of diverse NGOs collaborating to maximize social impact,
-            share resources, and support each other’s missions.
-            Our network promotes transparency, cooperation, and sustainable development.
+           HERDO is an independent, non-government, non-partisan, and non-profit organization established in December 8, 2024, to address poverty, human displacement, and climatic challenges in Somalia's Southwest State. The organization also focuses on reducing catastrophes and coping with disaster aftermaths and their negative impacts on poverty. HERDO supports social services, including basic education, health services, and promotes human rights, protection, and peaceful coexistence to achieve lasting peace and post-conflict reconstruction. Founded by Somali professionals and community members, HERDO advocates for climate justice and human rights.
           </p>
         </section>
 
