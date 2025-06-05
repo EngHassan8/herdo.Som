@@ -1,8 +1,14 @@
 import React from "react";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 function New3 () {
   return (
-    <section className="max-w-5xl mx-auto p-8 bg-white rounded-lg shadow-lg">
+
+    <div>
+<Header/>
+  
+    <section className="max-w-5xl mx-auto p-8 bg-white rounded-lg shadow-lg my-20">
       {/* Images Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <img
@@ -52,6 +58,12 @@ function New3 () {
         </p>
       </article>
     </section>
+
+
+
+    
+<Footer/>    
+</div>
   );
 }
 
