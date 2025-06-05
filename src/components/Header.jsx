@@ -16,8 +16,9 @@ function Header() {
       <ul className='hidden sm:flex gap-10 text-xl font-bold'>
         <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
         <li><NavLink to="/About" className={navLinkClass}>About</NavLink></li>
-        <li><NavLink to="/Contact" className={navLinkClass}>Contact</NavLink></li>
+        <li><NavLink to="/news" className={navLinkClass}>News</NavLink></li>
         <li><NavLink to="/details" className={navLinkClass}>Details</NavLink></li>
+        <li><NavLink to="/Contact" className={navLinkClass}>Contact</NavLink></li>
       </ul>
       <NavLink to="/" className='hidden sm:inline-block'>
         <button className='bg-orange-400 text-white px-4 py-2 rounded'>Get Start</button>
@@ -34,6 +35,7 @@ function Header() {
           <li><NavLink to="/" onClick={() => setIsOpen(false)} className={navLinkClass}>Home</NavLink></li>
           <li><NavLink to="/About" onClick={() => setIsOpen(false)} className={navLinkClass}>About</NavLink></li>
           <li><NavLink to="/Contact" onClick={() => setIsOpen(false)} className={navLinkClass}>Contact</NavLink></li>
+          <li><NavLink to="/news" onClick={() => setIsOpen(false)} className={navLinkClass}>News</NavLink></li>
           <li><NavLink to="/details" onClick={() => setIsOpen(false)} className={navLinkClass}>Details</NavLink></li>
           <li>
             <NavLink to="/" onClick={() => setIsOpen(false)}>

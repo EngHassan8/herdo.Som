@@ -5,7 +5,10 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Datials from "./pages/Details"
 import Scroll from "./components/Scroll"
-
+import News from "./pages/News"
+import New1 from "./pages/war/New1"
+import New2 from "./pages/war/New2"
+import New3 from "./pages/war/New3"
 
 function App (){
     return <div>
@@ -15,8 +18,13 @@ function App (){
      
         <Route path="/" element={<Home/>} />
         <Route  path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>} />
+        <Route  path="/news" element={<News/>}/>
         <Route path="/details" element={<Datials/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/new1" element={<New1/>} />
+        <Route path="/new2" element={<New2/>} />
+        <Route path="/new3" element={<New3/>} />
+
         {/* <Route path="/landingPage" element={<LandingPage/>} /> */}
       
 

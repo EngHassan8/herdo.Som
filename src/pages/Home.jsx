@@ -6,10 +6,14 @@ import { FaGlobe, FaHeartbeat, FaSeedling, FaHandsHelping, FaLeaf, FaWater, FaUs
 import Header from '../components/Header';
 import Herdo from "../assets/Herdo.jpg"
 import mohamed  from "../assets/mohamed.jpg"
-import moha  from "../assets/moha.jpg"
 import eng  from "../assets/eng.jpg"
 import Footer from '../components/Footer';
-
+import ber from "../assets/ber.jpg"
+import t15 from "../assets/t15.jpg"
+import ahmedV from "../assets/ahmedV.jpg"
+import Yuu from "../assets/Yuu.jpg"
+import salah from "../assets/salah.jpg"
+import Abdlow from "../assets/Abdlow.jpg"
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,14 +47,47 @@ const initialFounders = [
     id: 2,
     name: "Mohamed Hassan",
     role: "DEPUTY DIRECTOR",
-    image: moha,
+    image: t15,
   },
   {
     id: 3,
     name: "Omar Ali Isacck",
-    role: "GENERAL DIRECTOR",
+    role: "General secretory",
     image: eng
   },
+   {
+    id: 4,
+    name: "Salah Osman",
+    role: "HR Admin manage",
+    image: salah
+  },
+  {
+    id: 5,
+    name: "Ahmed Osman",
+    role: "General Health Manager",
+    image: ber
+  },
+   {
+    id: 6,
+    name: "Yusuf Mohamed",
+    role: "Head of program",
+    image: Yuu
+  },
+  {
+    id: 7,
+    name: "Ahmed Abukar",
+    role: "Finance Manager",
+    image: ahmedV
+  },
+ 
+  {
+    id: 8,
+    name: "Abdullahi Ali Adow",
+    role: "Director Of Operation",
+    image: Abdlow
+  },
+ 
+
 
   
  
@@ -116,21 +153,90 @@ const initialFounders = [
            HERDO is an independent, non-government, non-partisan, and non-profit organization established in December 8, 2024, to address poverty, human displacement, and climatic challenges in Somalia's Southwest State. The organization also focuses on reducing catastrophes and coping with disaster aftermaths and their negative impacts on poverty. HERDO supports social services, including basic education, health services, and promotes human rights, protection, and peaceful coexistence to achieve lasting peace and post-conflict reconstruction. Founded by Somali professionals and community members, HERDO advocates for climate justice and human rights.
           </p>
         </section>
+        
 
-        {/* Partners Section */}
-        <section className="bg-gray-50 py-16 px-6 sm:px-20 text-center max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-green-700">Our Partner NGOs</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-            {partners.map(({ id, name, icon, description }) => (
-              <div key={id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow cursor-pointer">
-                {icon}
-                <h3 className="text-xl font-semibold mt-4 mb-2">{name}</h3>
-                <p className="text-gray-600">{description}</p>
-              </div>
-            ))}
+      
+ <div className="bg-gray-50 min-h-screen py-12 px-10 my-10">
+      <section className="max-w-7xl mx-auto grid gap-10 md:grid-cols-3">
+        {/* News item 1 */}
+        <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHmQ_6YKDGakn2J43LG5wx06PG1xTwtE5ybw&s"
+            alt="HERDO empowers women"
+            className="w-full h-48 object-cover rounded-t-xl"
+          />
+          <div className="p-6 flex flex-col flex-grow">
+            <h2 className="text-xl font-bold text-blue-900 mb-2 hover:text-blue-700 cursor-pointer transition-colors duration-300">
+              HERDO empowers women through skill training
+            </h2>
+            <time className="text-sm text-gray-500 mb-4">June 1, 2025</time>
+            <p className="text-gray-700 flex-grow mb-6 line-clamp-3">
+              In an effort to support women's independence, HERDO has launched a
+              skill-building program teaching tailoring, business basics, and
+              digital literacy to over 200 women in rural areas.
+            </p>
+            <a
+              href="new1"
+              className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
+            >
+              Read More →
+            </a>
           </div>
-        </section>
+        </article>
 
+        {/* News item 2 */}
+        <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbaeJ0JhfL6HKFT_uLi5HXYdJ6DBa_r5Kd1w&"
+            alt="HERDO education initiative"
+            className="w-full h-48 object-cover rounded-t-xl"
+          />
+          <div className="p-6 flex flex-col flex-grow">
+            <h2 className="text-xl font-bold text-blue-900 mb-2 hover:text-blue-700 cursor-pointer transition-colors duration-300">
+              HERDO launches education initiative in Baidoa
+            </h2>
+            <time className="text-sm text-gray-500 mb-4">June 1, 2025</time>
+            <p className="text-gray-700 flex-grow mb-6 line-clamp-3">
+              HERDO has started a new educational support project for vulnerable children
+              in Baidoa. The program aims to enroll over 500 students in primary schools
+              with free supplies and training for teachers.
+            </p>
+            <a
+              href="new2"
+              className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
+            >
+              Read More →
+            </a>
+          </div>
+        </article>
+
+        {/* News item 3 */}
+        <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnzk7_PwDPemYNSD_GaW4i1nMG0D4W_m5SEnNWQxt9FV2xSxt9xguEPHCxaPJcQcHslVY&usqp=CAU"
+            alt="Clean Water Project"
+            className="w-full h-48 object-cover rounded-t-xl"
+          />
+          <div className="p-6 flex flex-col flex-grow">
+            <h2 className="text-xl font-bold text-blue-900 mb-2 hover:text-blue-700 cursor-pointer transition-colors duration-300">
+              Clean Water Project reaches 10 villages
+            </h2>
+            <time className="text-sm text-gray-500 mb-4">May 15, 2025</time>
+            <p className="text-gray-700 flex-grow mb-6 line-clamp-3">
+              HERDO successfully installed clean water systems in 10 villages across South
+              West State, providing access to safe drinking water for over 4,000 people,
+              reducing disease outbreaks.
+            </p>
+            <a
+              href="new3"
+              className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
+            >
+              Read More →
+            </a>
+          </div>
+        </article>
+      </section>
+    </div>
 
         {/* Services Section */}
         <section className="bg-white py-16 px-6 sm:px-20 text-center max-w-6xl mx-auto">
@@ -233,6 +339,19 @@ const initialFounders = [
   </section>
 );
 
+  {/* Partners Section */}
+        <section className="bg-gray-50 py-16 px-6 sm:px-20 text-center max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-green-700">Our Partner NGOs</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+            {partners.map(({ id, name, icon, description }) => (
+              <div key={id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow cursor-pointer">
+                {icon}
+                <h3 className="text-xl font-semibold mt-4 mb-2">{name}</h3>
+                <p className="text-gray-600">{description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
 <div className="max-w-5xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-3 gap-8">
   {founders.map((founder) => (
