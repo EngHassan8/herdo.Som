@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import { CiMenuBurger } from 'react-icons/ci';
 import { RxCross2 } from 'react-icons/rx';
@@ -35,6 +35,37 @@ export default function Home() {
     { id: 3, icon: <FaWater className="text-cyan-700 text-4xl mx-auto mb-4" />, title: "Clean Water Access", description: "Providing safe drinking water solutions." },
     { id: 4, icon: <FaUsers className="text-purple-700 text-4xl mx-auto mb-4" />, title: "Capacity Building", description: "Training and empowering NGOs and volunteers." },
   ];
+  
+  const partnerships = [
+    {
+      name: "World Food Programme",
+      logo:
+        "https://www.ri.org//content/uploads/2019/07/world-food-programme.png",
+    },
+    {
+      name: "UNICEF",
+      logo:
+      "https://diplo-media.s3.eu-central-1.amazonaws.com/UNICEF_3.png",
+    },
+    {
+      name: "WHO",
+      logo:
+        "https://partnership.who.int/images/librariesprovider14/default-album/who.tmb-small.jpg?Culture=en&sfvrsn=3cfe386a_3",
+    },
+    // Kusoo dar intaad rabto
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+    // Auto change every 4 seconds
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === partnerships.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000); // 4 seconds
+      return () => clearInterval(timer);
+    }, []);
+
   
 const initialFounders = [
    {
@@ -337,7 +368,51 @@ const initialFounders = [
       ))}
     </div>
   </section>
-);
+
+
+
+
+
+<div className="max-w-xl mx-auto px-6 py-12 text-center">
+  <h2 className="text-green-600 font-semibold text-lg mb-1 tracking-wide uppercase">
+    Partnerships
+  </h2>
+  <h1 className="text-3xl font-bold mb-8 text-gray-800">
+    We Collaborate With
+  </h1>
+
+  <div
+    className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center cursor-pointer
+               transition-transform duration-300 hover:scale-105"
+  >
+    <img
+      src={partnerships[currentIndex].logo}
+      alt={partnerships[currentIndex].name}
+      className="w-60 h-32 object-contain mb-4"
+    />
+    <p className="text-blue-700 font-semibold text-xl select-none">
+      {partnerships[currentIndex].name}
+    </p>
+  </div>
+
+  {/* Navigation dots */}
+  <div className="flex justify-center space-x-3 mt-6">
+    {partnerships.map((_, index) => (
+      <button
+        key={index}
+        className={`w-6 h-6 rounded-full transition-colors duration-300
+          ${index === currentIndex
+            ? "bg-green-700 shadow-lg shadow-green-400"
+            : "bg-green-200 hover:bg-green-400"
+        }`}
+        onClick={() => setCurrentIndex(index)}
+        aria-label={`Show partnership ${index + 1}`}
+      />
+    ))}
+  </div>
+</div>
+
+
 
   {/* Partners Section */}
         <section className="bg-gray-50 py-16 px-6 sm:px-20 text-center max-w-6xl mx-auto">
