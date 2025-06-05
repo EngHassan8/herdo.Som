@@ -92,28 +92,6 @@ export default function About () {
   </section>
 
   {/* 6. Our Team */}
-  <section className="bg-indigo-50 py-10">
-    <div className="max-w-6xl mx-auto px-6 text-center">
-      <h2 className="text-3xl font-bold text-indigo-700 mb-6">Meet Our Team</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div className="bg-white p-4 rounded-lg shadow">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" className="w-24 h-24 rounded-full mx-auto mb-2" />
-          <h3 className="font-bold">Ahmed Mohamed</h3>
-          <p className="text-sm text-gray-500">Founder & CEO</p>
-        </div>
-        <div className="bg-white p-4 rounded-lg shadow">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" className="w-24 h-24 rounded-full mx-auto mb-2" />
-          <h3 className="font-bold">Hodan Ali</h3>
-          <p className="text-sm text-gray-500">Secretary</p>
-        </div>
-        <div className="bg-white p-4 rounded-lg shadow">
-          <img src="https://randomuser.me/api/portraits/men/65.jpg" className="w-24 h-24 rounded-full mx-auto mb-2" />
-          <h3 className="font-bold">Mohamud Abdi</h3>
-          <p className="text-sm text-gray-500">Ex Director</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   {/* 7. Get Involved */}
   <section className="py-10">
