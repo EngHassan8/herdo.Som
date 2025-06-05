@@ -90,7 +90,7 @@ const initialFounders = [
    {
     id: 4,
     name: "Salah Osman",
-    role: "HR Admin manage",
+    role: "HR Admin manager",
     image: salah
   },
   {
@@ -102,7 +102,7 @@ const initialFounders = [
    {
     id: 6,
     name: "Yusuf Mohamed",
-    role: "Head of program",
+    role: "Head of programs",
     image: Yuu
   },
   {
