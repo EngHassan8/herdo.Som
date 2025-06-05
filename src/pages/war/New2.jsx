@@ -7,7 +7,7 @@ function New2() {
     <div>
 <Header/>
    
-    <section className="max-w-5xl mx-auto p-8 bg-white rounded-lg shadow-lg">
+    <section className="max-w-5xl mx-auto p-8 bg-white rounded-lg shadow-lg my-30">
       {/* Sawirada sare */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <img
