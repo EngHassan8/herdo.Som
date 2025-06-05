@@ -14,6 +14,7 @@ import ahmedV from "../assets/ahmedV.jpg"
 import Yuu from "../assets/Yuu.jpg"
 import salah from "../assets/salah.jpg"
 import Abdlow from "../assets/Abdlow.jpg"
+import mom from "../assets/mom.jpg"
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -127,6 +128,7 @@ const initialFounders = [
 
 ];
 
+
   const [founders, setFounders] = useState(initialFounders);
 
   // Bedel sawirka founder-ka
@@ -142,6 +144,33 @@ const initialFounders = [
       )
     );
   };
+
+
+  const slides = [
+  {
+    image: 
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHmQ_6YKDGakn2J43LG5wx06PG1xTwtE5ybw&s",
+    text: "Welcome to Our Website",
+  },
+  {
+    image:
+         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_MavDzcAlAolA1Ig0kdYVDr316IFuxAGTg&s",
+    text: "Discover Amazing Features",
+  },
+  {
+    image:
+      "https://unsom.unmissions.org/sites/default/files/styles/full_width_image/public/field/image/cover.jpg?itok=UHq-zeKo",
+    text: "Join Our Community",
+  },
+];
+   const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
 
   return (
@@ -282,6 +311,41 @@ const initialFounders = [
             ))}
           </div>
         </section>
+{/* ////////////////// */}
+
+<div
+  className="relative w-full max-w-4xl mx-auto h-[70vh] md:h-screen flex items-center justify-center text-white px-6"
+  style={{
+    backgroundImage: `url(${slides[current].image})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    transition: 'background-image 1s ease-in-out',
+  }}
+>
+  {/* Overlay: madow leh opacity */}
+  <div className="absolute inset-0 "></div>
+
+  {/* Text: responsive font sizes, centered */}
+  <h1 className="relative z-10 text-center font-bold drop-shadow-lg max-w-3xl
+                 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl px-4">
+    {slides[current].text}
+  </h1>
+
+  {/* Navigation dots: bottom center */}
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
+    {slides.map((_, index) => (
+      <button
+        key={index}
+        className={`w-5 h-5 rounded-full transition-colors duration-300 cursor-pointer ${
+          index === current ? 'bg-green-600' : 'bg-gray-400 hover:bg-green-500'
+        }`}
+        onClick={() => setCurrent(index)}
+        aria-label={`Go to slide ${index + 1}`}
+      />
+    ))}
+  </div>
+</div>
+
 
 
         {/* Upcoming Events Section */}
@@ -428,35 +492,39 @@ const initialFounders = [
           </div>
         </section>
 
-<div className="max-w-5xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-3 gap-8">
-  {founders.map((founder) => (
-    <div
-      key={founder.id}
-      className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center
-                 transition-transform duration-300 ease-in-out
-                 hover:scale-105 hover:shadow-2xl hover:translate-y-[-10px]"
-    >
-      <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-indigo-500 cursor-pointer
-                      transform transition-transform duration-300 ease-in-out
-                      hover:rotate-3 hover:scale-110">
-        <img
-          src={founder.image}
-          alt={founder.name}
-          className="w-full h-full object-cover"
-          title="Guji sawirka si aad u bedesho"
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => handleImageChange(e, founder.id)}
-          className="absolute inset-0 opacity-0 cursor-pointer"
-        />
-      </div>
-      <h3 className="text-xl font-semibold">{founder.name}</h3>
-      <p className="text-indigo-600 font-medium">{founder.role}</p>
-    </div>
-  ))}
-</div>
+   {/* Founders Section */}
+        <section className="py-16 bg-white rounded-lg shadow-lg max-w-7xl mx-auto px-6 sm:px-20">
+          <h2 className="text-4xl font-bold mb-10 text-green-700 text-center">
+            Our Founders
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+            {founders.map(({ id, name, role, image }) => (
+              <div
+                key={id}
+                className="bg-gray-100 p-6 rounded-lg shadow text-center"
+              >
+                <img
+                  src={image}
+                  alt={name}
+                  className="mx-auto mb-4 h-48 w-48 rounded-full object-cover cursor-pointer hover:opacity-80"
+                  onClick={() => document.getElementById(`fileInput${id}`).click()}
+                />
+                <input
+                  id={`fileInput${id}`}
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={(e) => handleImageChange(e, id)}
+                />
+                <h3 className="text-xl font-semibold text-green-800">{name}</h3>
+                <p className="text-gray-700">{role}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Slider Section */}
+     
 
        
       </main>
