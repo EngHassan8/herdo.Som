@@ -216,7 +216,7 @@ const initialFounders = [
 
 
         {/* About Section */}
-        <section className="bg-white py-16 px-6 sm:px-20 text-center max-w-5xl mx-auto">
+        <section className="bg-red-100 py-16 px-6 sm:px-20 text-center max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold mb-8 text-green-700">About Our NGO </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
            HERDO is an independent, non-government, non-partisan, and non-profit organization established in December 8, 2024, to address poverty, human displacement, and climatic challenges in Somalia's Southwest State. The organization also focuses on reducing catastrophes and coping with disaster aftermaths and their negative impacts on poverty. HERDO supports social services, including basic education, health services, and promotes human rights, protection, and peaceful coexistence to achieve lasting peace and post-conflict reconstruction. Founded by Somali professionals and community members, HERDO advocates for climate justice and human rights.
@@ -244,12 +244,11 @@ const initialFounders = [
               skill-building program teaching tailoring, business basics, and
               digital literacy to over 200 women in rural areas.
             </p>
-            <a
-              href="new1"
-              className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
-            >
-              Read More →
-            </a>
+      <NavLink to="/new1">
+        <button className='px-4 py-2 font-serif bg-red-100'>
+            Read More
+          </button>
+        </NavLink>    
           </div>
         </article>
 
@@ -270,12 +269,11 @@ const initialFounders = [
               in Baidoa. The program aims to enroll over 500 students in primary schools
               with free supplies and training for teachers.
             </p>
-            <a
-              href="new2"
-              className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
-            >
-              Read More →
-            </a>
+          <NavLink to="/new2">
+        <button className='px-4 py-2 font-serif bg-red-100'>
+            Read More
+          </button>
+        </NavLink>
           </div>
         </article>
 
@@ -296,12 +294,11 @@ const initialFounders = [
               West State, providing access to safe drinking water for over 4,000 people,
               reducing disease outbreaks.
             </p>
-            <a
-              href="new3"
-              className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
-            >
-              Read More →
-            </a>
+           <NavLink to="/new3">
+        <button className='px-4 py-2 font-serif bg-red-100'>
+            Read More
+          </button>
+        </NavLink>
           </div>
         </article>
       </section>
