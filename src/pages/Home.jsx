@@ -15,6 +15,15 @@ import Yuu from "../assets/Yuu.jpg"
 import salah from "../assets/salah.jpg"
 import Abdlow from "../assets/Abdlow.jpg"
 import mom from "../assets/mom.jpg"
+import {
+  Target,
+  Eye,
+  Flag,
+  HeartHandshake,
+  Megaphone,
+  HandCoins,
+  HelpingHand,
+} from "lucide-react";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -398,42 +407,71 @@ const initialFounders = [
   </div>
 </section>
 
-  <section className="max-w-6xl mx-auto px-6 py-12">
-    <h2 className="text-4xl font-extrabold text-center mb-10 text-gray-800">Our Mission, Vision & Values</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
-      {[
-        {
-          id: 1,
-          title: "Mission",
-          description: "Our mission is to deliver quality solutions that empower businesses to grow and innovate.",
-          borderColor: "border-indigo-500",
-        },
-        {
-          id: 2,
-          title: "Vision",
-          description: "Our vision is to be a global leader in tech innovation, setting new standards for excellence.",
-          borderColor: "border-pink-500",
-        },
-        {
-          id: 3,
-          title: "Values",
-          description: "Integrity, creativity, and collaboration are at the heart of everything we do.",
-          borderColor: "border-green-500",
-        },
-      ].map(({ id, title, description, borderColor }, index) => (
-        <div
-          key={id}
-          className={`bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center animate-bounce-slow ${borderColor} border-4`}
-          style={{ animationDelay: `${index * 0.3}s` }}
-        >
-          <h3 className="text-3xl font-semibold mb-4">{title}</h3>
-          <p className="text-gray-700 leading-relaxed">{description}</p>
-        </div>
-      ))}
-    </div>
-  </section>
+{/* /////////mission visstion /// */}
+ <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8 bg-gray-100">
+      {/* Our Mission */}
+      <div className="bg-blue-100 rounded-2xl shadow-md p-6 flex flex-col gap-3">
+        <Target className="w-10 h-10 text-blue-700" />
+        <h2 className="text-2xl font-bold text-blue-800">Our Mission</h2>
+        <p className="text-gray-700">
+          HERDO's mission is to combat poverty-related events, promote food and nutrition security, and increase economic growth through long-term strategies by advocating, raising awareness, promoting good governance and democracy, and promoting peace and justice.
+        </p>
+      </div>
 
+      {/* Our Vision */}
+      <div className="bg-blue-200 rounded-2xl shadow-md p-6 flex flex-col gap-3">
+        <Eye className="w-10 h-10 text-blue-900" />
+        <h2 className="text-2xl font-bold text-blue-900">Our Vision</h2>
+        <p className="text-gray-800">
+          HERDO envisions enhanced resilience to climate change and improved agricultural production through environmentally and economically sustainable means.
+        </p>
+      </div>
 
+      {/* Our Goals */}
+      <div className="bg-green-100 rounded-2xl shadow-md p-6 flex flex-col gap-3">
+        <Flag className="w-10 h-10 text-green-800" />
+        <h2 className="text-2xl font-bold text-green-800">Our Goals</h2>
+        <p className="text-gray-700">
+          HERDO strives to improve the living standards of vulnerable communities in Southwest State through community mobilization, capacity building, information sharing, and grassroots strengthening.
+        </p>
+      </div>
+
+      {/* Impact */}
+      <div className="bg-yellow-100 rounded-2xl shadow-md p-6 flex flex-col gap-3">
+        <HeartHandshake className="w-10 h-10 text-yellow-800" />
+        <h2 className="text-2xl font-bold text-yellow-800">HERDO's Impact</h2>
+        <p className="text-gray-700">
+          Through resilience and collaboration, HERDO Organization is transforming lives. Our work spans from climate adaptation to human rights advocacy, ensuring communities have the tools they need to thrive.
+        </p>
+      </div>
+
+      {/* Featured Campaigns */}
+      <div className="bg-red-100 rounded-2xl shadow-md p-6 flex flex-col gap-3">
+        <Megaphone className="w-10 h-10 text-red-800" />
+        <h2 className="text-2xl font-bold text-red-800">Featured Campaigns</h2>
+        <p className="text-gray-700">
+          HERDO is dedicated to supporting vulnerable communities by addressing challenges faced by IDPs and marginalized groups through sustainable development and humanitarian aid.
+        </p>
+      </div>
+
+      {/* Donations & Fundraising */}
+      <div className="bg-rose-100 rounded-2xl shadow-md p-6 flex flex-col gap-3">
+        <HandCoins className="w-10 h-10 text-rose-800" />
+        <h2 className="text-2xl font-bold text-rose-800">Donations & Fundraising</h2>
+        <p className="text-gray-700">
+          Your contributions help fund life-changing programs, from emergency response to sustainable development projects, making a lasting impact on communities in need.
+        </p>
+      </div>
+
+      {/* Aid & Support */}
+      <div className="bg-orange-100 rounded-2xl shadow-md p-6 flex flex-col gap-3">
+        <HelpingHand className="w-10 h-10 text-orange-800" />
+        <h2 className="text-2xl font-bold text-orange-800">Aid & Support</h2>
+        <p className="text-gray-700">
+          HERDO provides essential humanitarian aid, including food, water, and shelter, to vulnerable communities and displaced persons, ensuring their basic needs.
+        </p>
+      </div>
+    </section>
 
 
 
