@@ -1,8 +1,29 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-
+import { HashLoader } from "react-spinners";
+import  { useState, useEffect } from "react";
 function New3 () {
+   // Loading for the page mount
+    const [pageLoading, setPageLoading] = useState(true);
+    // Loading for the form submission
+  
+    useEffect(() => {
+      // Fake loading for 2 seconds on page load
+      const timer = setTimeout(() => {
+        setPageLoading(false);
+      }, 2000);
+  
+      return () => clearTimeout(timer);
+    }, []);
+   if (pageLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-gray-100">
+        <HashLoader color="#4f46e5" size={60} />
+      </div>
+    );
+  }
+  
   return (
 
     <div>

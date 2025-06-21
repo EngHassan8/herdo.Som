@@ -1,13 +1,18 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CiMenuBurger } from 'react-icons/ci';
 import { RxCross2 } from 'react-icons/rx';
 import { FaGlobe, FaHeartbeat, FaSeedling, FaHandsHelping, FaLeaf, FaWater, FaUsers } from 'react-icons/fa';
+import { Target, Eye, Flag, HeartHandshake, Megaphone, HandCoins, HelpingHand } from "lucide-react";
+
+import HashLoader from "react-spinners/HashLoader"; // ✅ Spinner
+
 import Header from '../components/Header';
-import Herdo from "../assets/Herdo.jpg"
-import mohamed  from "../assets/mohamed.jpg"
-import eng  from "../assets/eng.jpg"
 import Footer from '../components/Footer';
+
+import Herdo from "../assets/Herdo.jpg"
+import mohamed from "../assets/mohamed.jpg"
+import eng from "../assets/eng.jpg"
 import ber from "../assets/ber.jpg"
 import t15 from "../assets/t15.jpg"
 import ahmedV from "../assets/ahmedV.jpg"
@@ -15,164 +20,37 @@ import Yuu from "../assets/Yuu.jpg"
 import salah from "../assets/salah.jpg"
 import Abdlow from "../assets/Abdlow.jpg"
 import mom from "../assets/mom.jpg"
-import {
-  Target,
-  Eye,
-  Flag,
-  HeartHandshake,
-  Megaphone,
-  HandCoins,
-  HelpingHand,
-} from "lucide-react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true); // ✅ Spinner State
   const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
+
   const navLinkClass = ({ isActive }) =>
     isActive ? 'text-green-600 font-bold' : 'hover:text-green-400';
 
-  // Data for partners and services
-  const partners = [
-    { id: 1, name: "Green Earth Initiative", icon: <FaSeedling className="text-green-600 text-5xl mx-auto" />, description: "Environmental conservation and reforestation." },
-    { id: 2, name: "Health For All", icon: <FaHeartbeat className="text-red-600 text-5xl mx-auto" />, description: "Community health and awareness programs." },
-    { id: 3, name: "Global Aid Network", icon: <FaGlobe className="text-blue-600 text-5xl mx-auto" />, description: "International disaster relief and support." },
-    { id: 4, name: "Helping Hands", icon: <FaHandsHelping className="text-yellow-600 text-5xl mx-auto" />, description: "Volunteer support and social services." }
-  ];
-  
-
-  const services = [
-    { id: 1, icon: <FaHandsHelping className="text-blue-700 text-4xl mx-auto mb-4" />, title: "Community Support", description: "Supporting local communities through aid and education." },
-    { id: 2, icon: <FaLeaf className="text-green-700 text-4xl mx-auto mb-4" />, title: "Environmental Care", description: "Projects focused on sustainability and conservation." },
-    { id: 3, icon: <FaWater className="text-cyan-700 text-4xl mx-auto mb-4" />, title: "Clean Water Access", description: "Providing safe drinking water solutions." },
-    { id: 4, icon: <FaUsers className="text-purple-700 text-4xl mx-auto mb-4" />, title: "Capacity Building", description: "Training and empowering NGOs and volunteers." },
-  ];
-  
-  const partnerships = [
-    {
-      name: "World Food Programme",
-      logo:
-        "https://www.ri.org//content/uploads/2019/07/world-food-programme.png",
-    },
-    {
-      name: "UNICEF",
-      logo:
-      "https://diplo-media.s3.eu-central-1.amazonaws.com/UNICEF_3.png",
-    },
-    {
-      name: "WHO",
-      logo:
-        "https://partnership.who.int/images/librariesprovider14/default-album/who.tmb-small.jpg?Culture=en&sfvrsn=3cfe386a_3",
-    },
-    // Kusoo dar intaad rabto
-  ];
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-    // Auto change every 4 seconds
-    useEffect(() => {
-      const timer = setInterval(() => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex === partnerships.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 3000); // 4 seconds
-      return () => clearInterval(timer);
-    }, []);
-
-  
-const initialFounders = [
-   {
-    id: 1,
-    name: "Mohamud Abdi Sheikh Adan",
-    role: "  EXECUTIVE DIRECTOR ",
-    image: mohamed,
-  },
-{
-    id: 2,
-    name: "Mohamed Hassan",
-    role: "DEPUTY DIRECTOR",
-    image: t15,
-  },
-  {
-    id: 3,
-    name: "Omar Ali Isacck",
-    role: "General secretory",
-    image: eng
-  },
-   {
-    id: 4,
-    name: "Salah Osman",
-    role: "HR Admin manager",
-    image: salah
-  },
-  {
-    id: 5,
-    name: "Ahmed Osman",
-    role: "General Health Manager",
-    image: ber
-  },
-   {
-    id: 6,
-    name: "Yusuf Mohamed",
-    role: "Head of programs",
-    image: Yuu
-  },
-  {
-    id: 7,
-    name: "Ahmed Abukar",
-    role: "Finance Manager",
-    image: ahmedV
-  },
- 
-  {
-    id: 8,
-    name: "Abdullahi Ali Adow",
-    role: "Director Of Operation",
-    image: Abdlow
-  },
- 
-
-
-  
- 
-  
-  
-
-];
-
-
-  const [founders, setFounders] = useState(initialFounders);
-
-  // Bedel sawirka founder-ka
-  const handleImageChange = (e, founderId) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const newImageUrl = URL.createObjectURL(file);
-
-    setFounders((prev) =>
-      prev.map((f) =>
-        f.id === founderId ? { ...f, image: newImageUrl } : f
-      )
-    );
-  };
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Spinner duration
+    return () => clearTimeout(timer);
+  }, []);
 
   const slides = [
-  {
-    image: 
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHmQ_6YKDGakn2J43LG5wx06PG1xTwtE5ybw&s",
-    text: "Welcome to Our Website",
-  },
-  {
-    image:
-         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_MavDzcAlAolA1Ig0kdYVDr316IFuxAGTg&s",
-    text: "Discover Amazing Features",
-  },
-  {
-    image:
-      "https://unsom.unmissions.org/sites/default/files/styles/full_width_image/public/field/image/cover.jpg?itok=UHq-zeKo",
-    text: "Join Our Community",
-  },
-];
-   const [current, setCurrent] = useState(0);
+    {
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHmQ_6YKDGakn2J43LG5wx06PG1xTwtE5ybw&s",
+      text: "Welcome to Our Website",
+    },
+    {
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_MavDzcAlAolA1Ig0kdYVDr316IFuxAGTg&s",
+      text: "Discover Amazing Features",
+    },
+    {
+      image: "https://unsom.unmissions.org/sites/default/files/styles/full_width_image/public/field/image/cover.jpg?itok=UHq-zeKo",
+      text: "Join Our Community",
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -181,15 +59,81 @@ const initialFounders = [
     return () => clearInterval(interval);
   }, []);
 
+  const partnerships = [
+    {
+      name: "World Food Programme",
+      logo: "https://www.ri.org//content/uploads/2019/07/world-food-programme.png",
+    },
+    {
+      name: "UNICEF",
+      logo: "https://diplo-media.s3.eu-central-1.amazonaws.com/UNICEF_3.png",
+    },
+    {
+      name: "WHO",
+      logo: "https://partnership.who.int/images/librariesprovider14/default-album/who.tmb-small.jpg?Culture=en&sfvrsn=3cfe386a_3",
+    },
+  ];
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === partnerships.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const initialFounders = [
+    { id: 1, name: "Mohamud Abdi Sheikh Adan", role: "EXECUTIVE DIRECTOR", image: mohamed },
+    { id: 2, name: "Mohamed Hassan", role: "DEPUTY DIRECTOR", image: t15 },
+    { id: 3, name: "Omar Ali Isacck", role: "General secretory", image: eng },
+    { id: 4, name: "Salah Osman", role: "HR Admin manager", image: salah },
+    { id: 5, name: "Ahmed Osman", role: "General Health Manager", image: ber },
+    { id: 6, name: "Yusuf Mohamed", role: "Head of programs", image: Yuu },
+    { id: 7, name: "Ahmed Abukar", role: "Finance Manager", image: ahmedV },
+    { id: 8, name: "Abdullahi Ali Adow", role: "Director Of Operation", image: Abdlow },
+  ];
+
+  const [founders, setFounders] = useState(initialFounders);
+
+  const handleImageChange = (e, founderId) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const newImageUrl = URL.createObjectURL(file);
+    setFounders((prev) =>
+      prev.map((f) => (f.id === founderId ? { ...f, image: newImageUrl } : f))
+    );
+  };
+
+  const partners = [
+    { id: 1, name: "Green Earth Initiative", icon: <FaSeedling className="text-green-600 text-5xl mx-auto" />, description: "Environmental conservation and reforestation." },
+    { id: 2, name: "Health For All", icon: <FaHeartbeat className="text-red-600 text-5xl mx-auto" />, description: "Community health and awareness programs." },
+    { id: 3, name: "Global Aid Network", icon: <FaGlobe className="text-blue-600 text-5xl mx-auto" />, description: "International disaster relief and support." },
+    { id: 4, name: "Helping Hands", icon: <FaHandsHelping className="text-yellow-600 text-5xl mx-auto" />, description: "Volunteer support and social services." }
+  ];
+
+  const services = [
+    { id: 1, icon: <FaHandsHelping className="text-blue-700 text-4xl mx-auto mb-4" />, title: "Community Support", description: "Supporting local communities through aid and education." },
+    { id: 2, icon: <FaLeaf className="text-green-700 text-4xl mx-auto mb-4" />, title: "Environmental Care", description: "Projects focused on sustainability and conservation." },
+    { id: 3, icon: <FaWater className="text-cyan-700 text-4xl mx-auto mb-4" />, title: "Clean Water Access", description: "Providing safe drinking water solutions." },
+    { id: 4, icon: <FaUsers className="text-purple-700 text-4xl mx-auto mb-4" />, title: "Capacity Building", description: "Training and empowering NGOs and volunteers." },
+  ];
+
+  // ✅ Spinner loading
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-gray-100">
+        <HashLoader color="#4f46e5" size={50} />
+      </div>
+    );
+  }
   return (
     <>
-      {/* Header */}
-     
-        <Header/>
-      {/* Main Content */}
+      <main>
+        <Header />
+
       <main className=''>
-        <Header/>
+       
 
         {/* Hero Section */}
           <section className="flex flex-col md:flex-row items-center justify-between px-6 sm:px-20 py-16 gap-10 rounded-lg shadow-lg ">
@@ -512,6 +456,37 @@ const initialFounders = [
 </div>
 
 
+{/* Our Impact Section */}
+{/* Our Impact Section */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6 sm:px-20 text-center">
+    <h2 className="text-4xl font-bold text-green-700 mb-12">Our Impact</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <div className="p-6 bg-green-50 rounded-xl shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <h3 className="text-3xl font-extrabold text-green-800">25+</h3>
+        <p className="text-gray-700 mt-2">Projects Completed</p>
+      </div>
+
+      <div className="p-6 bg-blue-50 rounded-xl shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <h3 className="text-3xl font-extrabold text-blue-800">10,000+</h3>
+        <p className="text-gray-700 mt-2">People Helped</p>
+      </div>
+
+      <div className="p-6 bg-yellow-50 rounded-xl shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <h3 className="text-3xl font-extrabold text-yellow-600">15</h3>
+        <p className="text-gray-700 mt-2">Regions Reached</p>
+      </div>
+
+      <div className="p-6 bg-red-50 rounded-xl shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <h3 className="text-3xl font-extrabold text-red-600">30+</h3>
+        <p className="text-gray-700 mt-2">Volunteers Engaged</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
   {/* Partners Section */}
         <section className="bg-gray-50 py-16 px-6 sm:px-20 text-center max-w-6xl mx-auto">
@@ -563,9 +538,9 @@ const initialFounders = [
 
        
       </main>
-<Footer/>
-      {/* Footer */}
-     
-    </>
+        {/* Footer */}
+        <Footer />
+      </main>
+    </> 
   );
 }

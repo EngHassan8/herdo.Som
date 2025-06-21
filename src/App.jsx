@@ -8,7 +8,9 @@ import News from "./pages/News"
 import New1 from "./pages/war/New1"
 import New2 from "./pages/war/New2"
 import New3 from "./pages/war/New3"
-
+import Login from "./pages/Login"
+import Sign from "./pages/Sign"
+import  Profile from "./pages/Profile"
 function App (){
     return <div>
         <Scroll/>
@@ -22,6 +24,9 @@ function App (){
         <Route path="/new1" element={<New1/>} />
         <Route path="/new2" element={<New2/>} />
         <Route path="/new3" element={<New3/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/sign" element={<Sign/>} />
+        <Route path="/profile" element={<Profile/>} />
 
         {/* <Route path="/landingPage" element={<LandingPage/>} /> */}
       
